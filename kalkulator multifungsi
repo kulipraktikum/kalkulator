@@ -1,0 +1,327 @@
+#include<windows.h>
+#include<math.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+#include<MMsystem.h>
+
+int intro(), kalku(), nanya(), keluar(), suhu(), indeks(), datar(), tolong();
+
+int main()
+{
+intro();
+   int a;	
+printf("WELCOME TO OUR SIMPLE APPS\n");
+printf("1. Kalkulator konvensional\n");
+printf("2. konversi suhu\n");
+printf("3. Indeks Massa Tubuh\n");
+printf("4. Bangun Datar\n");
+printf("5. Exit\n");
+printf("6. help\n");
+scanf("%d", &a);
+system("cls");
+
+
+if(a==1){
+	kalku();
+}
+else if(a==2){
+	suhu();
+}
+else if(a==3){
+	indeks();
+}
+else if(a==4){
+	datar();
+}
+else if(a==5){
+	keluar();
+}
+else if(a==6){
+	tolong();
+}
+	else{
+		printf("input yang anda masukkan salah !");
+		nanya();
+	}
+
+
+}
+
+int intro(){
+	PlaySound(TEXT("C:\\Users\\USER\\Documents\\UNIVERSITAS INDONESIA\\semester 2\\pengantar tekkkom\\masterpiece\\SONGS.wav"),NULL,SND_ASYNC );
+	int x; 
+	double y;
+   char text1[]=    "\n\n \t\t\t Welcome To Our Program ";
+   char text2[]=    "\n\n \t\t\t By ";
+   char text3[]=    "\n\n \t\t\t Taka and Saddam ";
+    printf("\n\n");
+    for(x=0; text1[x]!=NULL; x++)
+   {
+     printf("%c",text1[x]);
+      for(y=0; y<=8888888; y++)
+      {
+      }
+   }
+   printf("\n\n");
+    for(x=0; text2[x]!=NULL; x++)
+   {
+     printf("%c",text2[x]);
+      for(y=0; y<=8888888; y++)
+      {
+      }
+   }
+   printf("\n\n");
+    for(x=0; text3[x]!=NULL; x++)
+   {
+     printf("%c",text3[x]);
+      for(y=0; y<=8888888; y++)
+      {
+      }
+   }
+   getch();
+   
+	system("cls");
+}
+
+int kalku(){
+	system("cls");
+	int num1,num2,opt;
+  printf("Enter the first number :");
+  scanf("%d",&num1);
+  printf("Enter the second number :");
+  scanf("%d",&num2);
+  
+    printf("\nInput your option :\n");
+    printf("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n");
+    scanf("%d",&opt);
+    switch(opt) {
+      case 1:
+        printf("The Addition of  %d and %d is: %d\n",num1,num2,num1+num2);
+        break;
+        
+      case 2:
+        printf("The Substraction of %d  and %d is: %d\n",num1,num2,num1-num2);
+        break;
+        
+      case 3:
+        printf("The Multiplication of %d  and %d is: %d\n",num1,num2,num1*num2);
+        break;  
+      
+      case 4:
+        if(num2==0) {
+          printf("The second integer is zero. Devide by zero.\n");
+        } else {
+          printf("The Division of %d  and %d is : %d\n",num1,num2,num1/num2);
+        }  
+        break;
+        
+      case 5: 
+        break; 
+        
+      default:
+        printf("Input correct option\n");
+        break; 
+    }
+	nanya();
+}
+
+int nanya(){
+	char c[100];
+	printf("\n \n Kembali Menu Utama ? \n Masukkan (y/n) : \n y:yes.\n n:no. \n ");
+	scanf("%s", &c);
+	if(strcmp(c,"y") == 0){
+		system("cls");
+		main();
+		
+	}
+	else if(strcmp(c,"n") == 0){
+		system("cls");
+		keluar();
+
+	}
+}
+
+int keluar() {
+	system("cls");
+	printf("Terimkasih");
+ 	return 0;
+}
+
+int suhu(){
+	int a; // suhu awal
+	int b; // satuan
+	system("cls");
+	printf("Program Konversi Suhu \n");
+	printf("masukkan suhu awal : \n");
+	scanf("%d", &a);
+	printf("masukkan satuan yang anda mau : \n1.celcius. \n 2.farenheit \n 3.reamur. \n 4.kelvin. \n");
+	scanf("%d", &b);
+	
+	switch(b){
+	
+	case 1 :
+		printf("hasil konversi suhu dari %d C: \n 1. farenheit : %d F \n", a, a*9/5 + 32);
+		printf("2.reamur : %d R\n", a*4/5);
+		printf("3.kelvin : %d K\n", a+273);
+		break;	
+		
+	case 2 :
+		printf("hasil konversi suhu dari %d F : \n 1. celcius : %d F \n", a, (a-32)*9/5);
+		printf("2.reamur : %d R\n", (a-32)*4/9);
+		printf("3.kelvin : %d K\n", (a-32)*9/5 + 273);
+		break;
+		
+		
+	case 3 : 
+		printf("hasil konversi suhu dari %d r : \n 1. celcius : %d C \n", a, a*5/4);
+		printf("2.reamur : %d R\n", a*9/4 + 32);
+		printf("3.kelvin : %d K\n",  a*5/4 + 273);
+		break;
+		
+	case 4 :
+		printf("hasil konversi suhu dari %d k : \n 1. celcius : %d C \n", a, a-273);
+		printf("2.reamur : tidak bisa R\n");
+		printf("3.farenheit : tidak bisa\n");
+		break;
+    
+	case 5 :
+		break;
+	
+	default:
+        printf("Input correct option\n");
+        break; 
+    
+}
+nanya();
+	
+}
+
+int indeks (){
+
+	float a; // tinggi
+	float b;// berat badan
+	float sum;
+	system("cls");
+	printf("indeks massa tubuh\n");
+	printf("masukkan tinggi badan anda : \n");
+	scanf("%f", &a);
+	printf("masukkan berat badan anda : \n");
+	scanf("%f", &b);
+	
+	
+	sum = (b/a)/a;
+	
+
+if(sum<=18){
+	printf("hasil indeks massa tubuh anda : %f \n", sum);
+	printf("\n keterangan : berat badan anda kurang ideal");
+}
+else if(18<sum<25){
+	printf("hasil indeks massa tubuh anda : %f \n", sum);
+	printf("\n keterangan : berat badan anda ideal");
+}
+else if(25<=sum<30){
+	printf("hasil indeks massa tubuh anda : %f \n", sum);
+	printf("\n keterangan : berat badan anda berlebih");
+}
+else if(30<=sum<40){
+	printf("hasil indeks massa tubuh anda : %f \n", sum);	
+	printf("\n keterangan : berat badan anda kategori gemuk");
+}
+else if(sum>=40){
+	printf("hasil indeks massa tubuh anda : %f \n", sum);
+	printf("\n keterangan : berat badan anda kategori sangat gemuk");
+}
+else {
+	printf("\n error");
+}
+nanya();	
+}
+
+int datar(){
+	system("cls");
+	int a, b, c, d, e;
+printf("Bangun datar untuk Luas dan Keliling\n");
+printf("Opsi : \n");
+printf("1. persegi.\n2. persegi panjang. \n3. segitiga \n4. lingkaran. \n5. trapesium sama kaki. \n\n");
+printf("inputan anda : ");
+scanf("%d", &a);
+
+switch(a){
+	case 1 :
+		system("cls");
+		printf("Bangun datar\n");
+		printf("PERSEGI\n");
+		printf("masukkan panjang rusuk : ");
+		scanf("%d", &b);
+		printf("\n hasilnya adalah : \n");
+		printf("luas : %d \nkeliling : %d", b*b, b*4);
+		break;
+	case 2 :
+		system("cls");
+		printf("Bangun datar\n");
+		printf("PERSEGI PANJANG\n");
+		printf("masukkan panjang persegi : ");
+		scanf("%d", &b);
+		printf("masukkan lebar persegi : ");
+		scanf("%d", &c);
+		printf("\n hasilnya adalah : \n");
+		printf("luas : %d \nkeliling : %d", b*c, 2*(b+c));
+		break;
+	case 3 :
+		system("cls");
+		printf("Bangun datar\n");
+		printf("SEGITIGA SAMA KAKI\n");
+		printf("masukkan alas segitiga : ");
+		scanf("%d", &b);
+		printf("masukkan tinggi segitiga : ");
+		scanf("%d", &c);
+		printf("masukkan sisi miringnya : ");
+		scanf("%d", &d);
+		printf("\n hasilnya adalah : \n");
+		printf("luas : %d \nkeliling : %d",(b*c)/2 , b+(2*d));
+		break;
+		
+	case 4 :
+		system("cls");
+		printf("Bangun datar\n");
+		printf("LINGKARAN\n");
+		printf("masukkan panjang rusuknya : ");
+		scanf("%d", &b);
+	if(b%7==0){
+		printf("\n hasilnya adalah : \n");
+		printf("luas : %d \nkeliling : %d", b*b/7*22, (b*2)/7*22*4);
+	}
+	else{
+		break;
+	}
+	case 5 :
+		system("cls");
+		printf("Bangun datar\n");
+		printf("TRAPESIUM SAMA KAKI\n");
+		printf("masukkan alas trapesium : ");
+		scanf("%d", &b);
+		printf("masukkan tinggi trapesium : ");
+		scanf("%d", &c);
+		printf("masukkan sisi atas : ");
+		scanf("%d", &d);
+		printf("masukkan sisi miring trapesium : ");
+		scanf("%d", &e);
+		printf("\n hasilnya adalah : \n");
+		printf("luas : %d \nkeliling : %d", (b+d)/2*c , b+d+(2*e));
+		break;
+	}
+nanya();
+
+}
+
+tolong(){
+	system("cls");
+	printf("SELAMAT DATANG DI BANTUAN PROGRAM KAMI\n");
+	printf("1. Masukkan input yang anda tuju, sesuai dengan pilihan yang ada.\n");
+	printf("2. jalankan aplikasi sesuai dengan panduan atau arahan yang ada.\n");
+	printf("3. Pokoknya ikuti huruf besar kecilnya.");
+	
+	nanya();
+}
